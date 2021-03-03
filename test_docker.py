@@ -8,9 +8,9 @@ import docker
 #create a file with content log for each container_id
 def output_log(container):
   filename = "docker_" + container.id
-  fichier = open(filename, "wb")
-  fichier.write(container.logs())
-  fichier.close()
+  f = open(filename, "wb")
+  f.write(container.logs())
+  f.close()
 
 
 #the docker daemon should be running 
@@ -28,14 +28,3 @@ for container in client.containers.list():
 #display all id images
 for image in client.images.list():
   print(image.id)
-
-
-
-
-
-
-
-
-
-
-
